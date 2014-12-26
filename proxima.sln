@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[1] Proxy Server", "[1] Proxy Server", "{7741CBD1-842A-4681-BBF7-28DF62E9F09A}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "proxima", "proxima\proxima.njsproj", "{5AB2B062-4C6A-4DF0-AB27-328EDC975549}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[2] Star Nodes", "[2] Star Nodes", "{2268E9F1-7BE1-472A-B023-1FDF84D7A176}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[3] Database", "[3] Database", "{91812577-803D-4EBB-A949-F124CC4AA3E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AB2B062-4C6A-4DF0-AB27-328EDC975549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB2B062-4C6A-4DF0-AB27-328EDC975549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB2B062-4C6A-4DF0-AB27-328EDC975549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB2B062-4C6A-4DF0-AB27-328EDC975549}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AB2B062-4C6A-4DF0-AB27-328EDC975549} = {7741CBD1-842A-4681-BBF7-28DF62E9F09A}
+	EndGlobalSection
+EndGlobal

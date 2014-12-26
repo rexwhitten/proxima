@@ -1,0 +1,13 @@
+{
+  "name": "proxima",
+  "version": "0.0.0",
+  "description": "proxima",
+  "main": "server.js",
+  "author": {
+    "name": "rex",
+    "email": ""
+  },
+  "dependencies": {
+    "http-proxy": "^1.8.1"
+  }
+}
