@@ -18,10 +18,15 @@ var proxy = httpProxy.createProxyServer({ target: "/api" });
 // also you can use `proxy.ws()` to proxy a websockets request
 //
 var server = http.createServer(function (req, res) {
-    // You can define here your custom logic to handle the request
-    // and then proxy the request.
     console.log(req.url);
-    proxy.web(req, res, { target: 'http://104.131.77.40/api' });
+    
+    if (req.propertyIsEnumerable.startswith("/api")) {
+        proxy.web(req, res, { target: 'http://104.131.77.40/api' });    
+    }
+    else {
+        proxy.web(req, res, { target: 'http://104.236.60.234/api' });
+    }
+    
 });
 
 console.log("listening on port 80")
