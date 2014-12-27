@@ -7,20 +7,11 @@ var Options = {
     ]
 };
 
-// Http Objects
-var http = require('http'),
-    httpProxy = require('http-proxy');
+var httpProxy = require('http-proxy');
 
-//
-// Create a proxy server with custom application logic
-//
-var proxy = httpProxy.createProxyServer({});
+var proxy = httpProxy.createProxy();
 
-var server = http.createServer(function (req, res) {
-    // You can define here your custom logic to handle the request
-    // and then proxy the request.
-    proxy.web(req, res, { target: 'http://104.131.77.40/api' });
-});
-
-console.log("listening on port 5050")
-server.listen(80);
+var options = {
+    '104.236.87.110/api/test': 'http://104.131.77.40/api',
+    '104.236.87.110/api/dev': 'http://104.236.60.234/api'
+}
