@@ -2,32 +2,43 @@
 // Proxima - Proxy Server
 // -------------------------------------------------------------------
 
+// Dependencies
 var http = require('http'),
     url = require('url'),
-    httpProxy = require('http-proxy');
+    httpProxy = require('http-proxy'),
+    connect = require('connect');
 
-//
-// Create a proxy server with custom application logic
-//
-var proxy = httpProxy.createProxyServer({ target: "/api" });
+// Application
+var app = connect();
 
+// gzip/deflate outgoing responses
+var compression = require('compression')
+app.use(compression());
 
-//
-// Create your custom server and just call `proxy.web()` to proxy
-// a web request to the target passed in the options
-// also you can use `proxy.ws()` to proxy a websockets request
-//
-var server = http.createServer(function (req, res) {
+// store session state in browser cookie
+var cookieSession = require('cookie-session')
+app.use(cookieSession({
+        keys: ['proxima-0', 'proxima-1']
+}));
+
+// Global Middleware
+app.use(function (req, res) {
     console.log(req.url);
-    
-    if (req.propertyIsEnumerable.startswith("/api")) {
-        proxy.web(req, res, { target: 'http://104.131.77.40/api' });    
-    }
-    else {
-        proxy.web(req, res, { target: 'http://104.236.60.234/api' });
-    }
-    
 });
 
-console.log("listening on port 80")
-server.listen(80);
+
+// Proxy Server
+var proxy = httpProxy.createProxyServer({ target: "/api" });
+
+app.use("/api", function (req, res) {
+    console.log("[proxima] [sending to startnode01]");
+    proxy.web(req, res, { target: 'http://104.131.77.40/api' });    
+});
+
+app.use("/user", function (req, res) {
+    console.log("[proxima] [sending to startnode02]");
+    proxy.web(req, res, { target: 'http://104.236.60.234/api' });    
+});
+
+// Server Init
+http.createServer(app).listen(80);
