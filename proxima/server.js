@@ -15,3 +15,9 @@ var options = {
     '104.236.87.110/api/test': 'http://104.131.77.40/api',
     '104.236.87.110/api/dev': 'http://104.236.60.234/api'
 }
+
+require('http').createServer(function (req, res) {
+    proxy.web(req, res, {
+        target: options[req.headers.host]
+    });
+}).listen(80);
