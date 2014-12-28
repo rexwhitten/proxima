@@ -1,15 +1,25 @@
-﻿// -------------------------------------------------------------------
-// Proxima - Proxy Server
+﻿// Proxima - Proxy Server
 // -------------------------------------------------------------------
 
-// Dependencies
+// Load thrid party dependencies
+// -------------------------------------------------------------------
 var http = require('http'),
     url = require('url'),
     httpProxy = require('http-proxy'),
     connect = require('connect');
 
-// Application
+// Load Proxima
+// -------------------------------------------------------------------
+var proxima = {};
+
+proxima.middleware = require('./middleware/index.js').Package;
+
+proxima.components = require('./components/index.js').Package;
+
+
+// Build Connect Application
 var app = connect();
+app.use(proxima.middleware.Logging);
 
 // gzip/deflate outgoing responses
 var compression = require('compression')
@@ -20,12 +30,6 @@ var cookieSession = require('cookie-session')
 app.use(cookieSession({
         keys: ['proxima-0', 'proxima-1']
 }));
-
-// Global Middleware
-app.use(function (req, res, next) {
-    console.log(req.url);
-    next();
-});
 
 
 // Proxy Server
@@ -41,5 +45,6 @@ app.use("/user", function (req, res) {
     proxy.web(req, res, { target: 'http://104.236.60.234/api' });    
 });
 
+
 // Server Init
-http.createServer(app).listen(80);
+http.createServer(app).listen(3080);
