@@ -1,0 +1,2 @@
+D:\github\apistation\nodestation\obj\Debug\apistation.njsprojResolveAssemblyReference.cache
+D:\github\apistation\nodestation\bin\Microsoft.NodejsTools.WebRole.dll
