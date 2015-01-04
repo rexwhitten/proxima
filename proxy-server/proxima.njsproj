@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1ff3d645-37cc-48d3-80c2-e335233071fa}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>server.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="out\fonts\OpenSans-Bold-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-Bold-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-Bold-webfont.woff" />
+    <Content Include="out\fonts\OpenSans-BoldItalic-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-BoldItalic-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-BoldItalic-webfont.woff" />
+    <Content Include="out\fonts\OpenSans-Italic-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-Italic-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-Italic-webfont.woff" />
+    <Content Include="out\fonts\OpenSans-Light-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-Light-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-Light-webfont.woff" />
+    <Content Include="out\fonts\OpenSans-LightItalic-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-LightItalic-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-LightItalic-webfont.woff" />
+    <Content Include="out\fonts\OpenSans-Regular-webfont.eot" />
+    <Content Include="out\fonts\OpenSans-Regular-webfont.svg" />
+    <Content Include="out\fonts\OpenSans-Regular-webfont.woff" />
+    <Content Include="out\global.html" />
+    <Content Include="out\index.html" />
+    <Content Include="out\scripts\prettify\Apache-License-2.0.txt" />
+    <Content Include="out\server.js.html" />
+    <Content Include="out\styles\jsdoc-default.css" />
+    <Content Include="out\styles\prettify-jsdoc.css" />
+    <Content Include="out\styles\prettify-tomorrow.css" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Compile Include="out\scripts\linenumber.js" />
+    <Compile Include="out\scripts\prettify\lang-css.js" />
+    <Compile Include="out\scripts\prettify\prettify.js" />
+    <Compile Include="server.js" />
+    <Compile Include="components\index.js" />
+    <Compile Include="middleware\index.js" />
+    <Compile Include="components\cache\cache.js" />
+    <Compile Include="components\message\message.js" />
+    <Compile Include="components\topology\topology.js" />
+    <Compile Include="middleware\log\log.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="components" />
+    <Folder Include="components\authroization" />
+    <Folder Include="components\cache" />
+    <Folder Include="components\message" />
+    <Folder Include="components\topology" />
+    <Folder Include="middleware" />
+    <Folder Include="middleware\log" />
+    <Folder Include="help\" />
+    <Folder Include="out\" />
+    <Folder Include="out\fonts\" />
+    <Folder Include="out\scripts\" />
+    <Folder Include="out\scripts\prettify\" />
+    <Folder Include="out\styles\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
