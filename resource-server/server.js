@@ -19,7 +19,7 @@ var use_disk = false;
 
 var db = {};
 
-var db = level('./apidb');
+var db = level('/home/deploy/data/api', { valueEncoding: 'json' });
 
 // ---------------------------------------------------------------
 // Middleware 
